@@ -1,0 +1,28 @@
+﻿//components - grid
+
+.grid {
+    display: inline-block;
+    width: 90%;
+    margin: 20px 5%;
+
+	&__strip {
+		display: inline-block;
+		width: 33.3%;
+		margin-right: -4px;
+		background: rebeccapurple;
+	}
+
+	&__item {
+		background-color: red;
+		width: 92%;
+		height: 120px;
+		margin: 4%;
+		padding: 0;
+		float: left;
+
+		&--large {
+			height: 240px;
+			background-color: darkblue;
+		}
+	}
+}

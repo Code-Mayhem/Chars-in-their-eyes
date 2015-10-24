@@ -16,6 +16,7 @@
 * generic - default
 * 
 * _COMPONENTS
+* components - grid
 * components - header
 *
 */
@@ -25,4 +26,5 @@
 
 @import "_settings\_settings.colors.scss";
 @import "_generic\_generic-default.scss";
+@import "_components\_components-grid.scss";
 @import "_components\_components-header.scss";
