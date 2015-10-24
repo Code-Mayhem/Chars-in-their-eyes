@@ -19,8 +19,6 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,94 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
-    <Content Include="_source\fonts\gotham-book-webfont.svg" />
-    <Content Include="_source\fonts\gotham-medium-webfont.svg" />
-    <Content Include="_source\images\banners\medium_ad-banner-1x.jpg" />
-    <Content Include="_source\images\banners\medium_ad-banner-2x.jpg" />
-    <Content Include="_source\images\banners\small_ad-banner-1x.jpg" />
-    <Content Include="_source\images\banners\small_ad-banner-2x.jpg" />
-    <Content Include="_source\images\footer\footer-promo-apg-1x.jpg" />
-    <Content Include="_source\images\footer\footer-promo-apg-2x.jpg" />
-    <Content Include="_source\images\footer\footer-promo-cac-1x.jpg" />
-    <Content Include="_source\images\footer\footer-promo-cac-2x.jpg" />
-    <Content Include="_source\images\footer\footer-promo-delivery-1x.jpg" />
-    <Content Include="_source\images\footer\footer-promo-delivery-2x.jpg" />
-    <Content Include="_source\images\global\chevron.png" />
-    <Content Include="_source\images\global\chevron.svg" />
-    <Content Include="_source\images\global\empty-basket.png" />
-    <Content Include="_source\images\global\favicon.ico" />
-    <Content Include="_source\images\global\footer-logo.png" />
-    <Content Include="_source\images\global\footer-logo.svg" />
-    <Content Include="_source\images\global\george-title.png" />
-    <Content Include="_source\images\global\george-title.svg" />
-    <Content Include="_source\images\global\logo-white.png" />
-    <Content Include="_source\images\global\logo-white.svg" />
-    <Content Include="_source\images\global\logo.png" />
-    <Content Include="_source\images\global\logo.svg" />
-    <Content Include="_source\images\global\new.png" />
-    <Content Include="_source\images\global\new.svg" />
-    <Content Include="_source\images\global\social.png" />
-    <Content Include="_source\images\global\social.svg" />
-    <Content Include="_source\images\hero-main\carousel-1-1x.jpg" />
-    <Content Include="_source\images\hero-main\carousel-1-2x.jpg" />
-    <Content Include="_source\images\hero-main\carousel-2-1x.jpg" />
-    <Content Include="_source\images\hero-main\carousel-2-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-1-large-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-1-large-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-1-small-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-1-small-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-2-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-2-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-3-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-3-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-4-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-4-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-5-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-5-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-6-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-6-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-7-large-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-7-large-2x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-7-small-1x.jpg" />
-    <Content Include="_source\images\promo-grid\placement-7-small-2x.jpg" />
-    <Content Include="_source\images\promo-store\AsdaStore.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_cafe-1x.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_cafe-2x.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_hatton-1x.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_hatton-2x.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_peppers-1x.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_peppers-2x.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_superhero-1x.jpg" />
-    <Content Include="_source\images\promo-store\storeNews_superhero-2x.jpg" />
-    <Content Include="_source\images\styleguide\placement-1-large-1x.png" />
-    <Content Include="_source\images\styleguide\placement-1-large-2x.png" />
-    <Content Include="_source\images\styleguide\placement-1-small-1x.png" />
-    <Content Include="_source\images\styleguide\placement-1-small-2x.png" />
-    <Content Include="_source\images\styleguide\placement-2-1x.png" />
-    <Content Include="_source\images\styleguide\placement-2-2x.png" />
-    <Content Include="_source\scripts\helium.js" />
-    <Content Include="_source\scripts\ie\html5shiv.min.js" />
-    <Content Include="_source\scripts\src\breakpoints.js" />
-    <Content Include="_source\scripts\src\carousel.js" />
-    <Content Include="_source\scripts\src\horizontal-scroll.js" />
-    <Content Include="_source\scripts\src\navigation-primary.js" />
-    <Content Include="_source\scripts\src\postcode.js" />
-    <Content Include="_source\scripts\src\website.js" />
-    <Content Include="_source\scripts\vendor\jquery-1.11.3.min.js" />
-    <Content Include="_source\scripts\vendor\owl.carousel.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,56 +94,28 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="_source\fonts\gotham-book-webfont.eot" />
-    <Content Include="_source\fonts\gotham-book-webfont.ttf" />
-    <Content Include="_source\fonts\gotham-book-webfont.woff" />
-    <Content Include="_source\fonts\gotham-book-webfont.woff2" />
-    <Content Include="_source\fonts\gotham-medium-webfont.eot" />
-    <Content Include="_source\fonts\gotham-medium-webfont.ttf" />
-    <Content Include="_source\fonts\gotham-medium-webfont.woff" />
-    <Content Include="_source\fonts\gotham-medium-webfont.woff2" />
-    <Content Include="_source\styles\header-footer-legacy.scss" />
-    <Content Include="_source\styles\header-footer.scss" />
-    <Content Include="_source\styles\ie7.scss" />
-    <Content Include="_source\styles\ie8.scss" />
+    <Content Include="_source\scripts\jquery-1.11.3.min.js" />
     <Content Include="_source\styles\main.scss" />
-    <Content Include="_source\styles\_components\_components.buttons.scss" />
-    <Content Include="_source\styles\_components\_components.owl.carousel.custom.scss" />
-    <Content Include="_source\styles\_components\_components.owl.carousel.scss" />
-    <Content Include="_source\styles\_components\_components.owl.transitions.scss" />
-    <Content Include="_source\styles\_components\_components.social.scss" />
-    <Content Include="_source\styles\_elements\_elements.links.scss" />
-    <Content Include="_source\styles\_elements\_elements.page.scss" />
-    <Content Include="_source\styles\_generic\_generic.box-sizing.scss" />
-    <Content Include="_source\styles\_generic\_generic.helpers.scss" />
-    <Content Include="_source\styles\_generic\_generic.normalize.scss" />
-    <Content Include="_source\styles\_generic\_generic.page.scss" />
-    <Content Include="_source\styles\_generic\_generic.reset.scss" />
-    <Content Include="_source\styles\_objects\_objects.layout.scss" />
-    <Content Include="_source\styles\_objects\_objects.styleguide.scss" />
-    <Content Include="_source\styles\_settings\_settings.breakpoints.scss" />
-    <Content Include="_source\styles\_settings\_settings.buttons.scss" />
-    <Content Include="_source\styles\_settings\_settings.colors.scss" />
-    <Content Include="_source\styles\_settings\_settings.global.scss" />
-    <Content Include="_source\styles\_settings\_settings.old-ie-7.scss" />
-    <Content Include="_source\styles\_settings\_settings.old-ie-8.scss" />
-    <Content Include="_source\styles\_settings\_settings.typography.scss" />
-    <Content Include="_source\styles\_tools\_tools.functions.scss" />
-    <Content Include="_source\styles\_tools\_tools.mixins.scss" />
-    <Content Include="_source\styles\_tools\_tools.typography.scss" />
-    <Content Include="_source\styles\_trumps\_trumps.helpers.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="_source\fonts\" />
+    <Folder Include="_source\images\" />
+    <Folder Include="_source\styles\_components\" />
+    <Folder Include="_source\styles\_elements\" />
+    <Folder Include="_source\styles\_generic\" />
+    <Folder Include="_source\styles\_objects\" />
+    <Folder Include="_source\styles\_settings\" />
+    <Folder Include="_source\styles\_tools\" />
+    <Folder Include="_source\styles\_trumps\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -244,7 +130,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55088</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:54403/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -256,13 +142,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
