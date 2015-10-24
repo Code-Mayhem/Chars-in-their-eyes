@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -7,12 +6,89 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        .fill {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width"/>
+
+    <link rel="stylesheet"type="text/css" href="../_build/styles/main.css"/>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- style sheet of viewer -->
+    <link type="text/css" rel="stylesheet" href="https://viewing.api.autodesk.com/viewingservice/v1/viewers/style.css?v=v1.2.15"/>
+
     <title>Index</title>
 </head>
+
 <body>
-	<div>
-		<h1>HI</h1> 
-	</div>
+		
+	<header class="header">
+
+		<h1>Chars in their eyes</h1>
+
+	</header>
+
+    <div class="grid">
+
+        <div class="grid__strip">
+            <div class="grid__item"></div>
+            <div class="grid__item grid__item--large"></div>
+        </div>
+
+        <div class="grid__strip">
+            <div class="grid__item grid__item--large"></div>
+            <div class="grid__item"></div>
+        </div>
+
+        <div class="grid__strip">
+            <div class="grid__item"></div>
+            <div class="grid__item grid__item--large"></div>
+        </div>
+    </div>
+
+    <div class="container">
+    <div class="row fill">
+        <div class="col-lg-12 fill ">
+            <!--The viewer container -->
+            <div id="viewer"></div>
+        </div>
+    </div>
+        </div>
+
+
+
+
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../../Scripts/jquery-1.11.3.min.js"></script>
+        <script src="../../Scripts/bootstrap.min.js"></script>
+
+        <!--JS library of viewer-->
+        <script type="text/javascript" src="https://developer.api.autodesk.com/viewingservice/v1/viewers/three.min.js?v=v1.2.15"></script>
+        <script type="text/javascript" src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js?v=v1.2.15"></script>
+        <!--A basic extension sample-->
+        <script src="../../Scripts/BasicExtension.js"></script>
+        <script src="../../Scripts/Viewer.js"></script>
+
 </body>
 </html>

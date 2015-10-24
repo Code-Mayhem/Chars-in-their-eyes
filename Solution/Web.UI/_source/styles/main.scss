@@ -9,12 +9,22 @@
 /**
 * CONTENTS
 * 
+* _SETTINGS
+* settings - colours
+* 
+* _GENERIC
+* generic - default
+* 
 * _COMPONENTS
-* test style
+* components - grid
+* components - header
 *
 */
 
 
 
 
-@import "_components\_components-test.scss";
+@import "_settings\_settings.colors.scss";
+@import "_generic\_generic-default.scss";
+@import "_components\_components-grid.scss";
+@import "_components\_components-header.scss";

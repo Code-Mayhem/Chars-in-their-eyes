@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.UI", "Web.UI\Web.UI.csproj", "{E281274C-0835-4258-8108-99BB004FE42A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CA826FBE-E0A5-4F75-8C85-B85CCB965F75}"
@@ -9,6 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CA826F
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis.Service", "TextAnalysis\TextAnalysis.Service.csproj", "{4CF03CBF-E0A5-4237-B476-BCF9A25D9D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockworkSMS.Service", "ClockworkSMS.Service\ClockworkSMS.Service.csproj", "{475B89B6-318E-49F4-8886-D64D28E9C6A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDesk.Service", "AutoDesk.Service\AutoDesk.Service.csproj", "{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerHelperApp", "ViewerHelperApp\ViewerHelperApp.csproj", "{DAE5D2DE-FE3D-4E54-9F1D-0B4B8AFC5EE8}"
 EndProject
@@ -29,6 +39,22 @@ Global
 		{E281274C-0835-4258-8108-99BB004FE42A}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E281274C-0835-4258-8108-99BB004FE42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E281274C-0835-4258-8108-99BB004FE42A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF03CBF-E0A5-4237-B476-BCF9A25D9D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF03CBF-E0A5-4237-B476-BCF9A25D9D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF03CBF-E0A5-4237-B476-BCF9A25D9D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF03CBF-E0A5-4237-B476-BCF9A25D9D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{475B89B6-318E-49F4-8886-D64D28E9C6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475B89B6-318E-49F4-8886-D64D28E9C6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475B89B6-318E-49F4-8886-D64D28E9C6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475B89B6-318E-49F4-8886-D64D28E9C6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E281274C-0835-4258-8108-99BB004FE42A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E281274C-0835-4258-8108-99BB004FE42A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E281274C-0835-4258-8108-99BB004FE42A}.Release|x86.ActiveCfg = Release|Any CPU

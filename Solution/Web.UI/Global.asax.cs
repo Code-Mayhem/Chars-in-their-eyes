@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Common;
 
 namespace Web.UI
 {
@@ -13,6 +14,15 @@ namespace Web.UI
 		{
 			AreaRegistration.RegisterAllAreas();
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
+		    Bootstrap.Setup();
 		}
 	}
+
+    public class Bootstrap
+    {
+        public static void Setup()
+        {
+            Credentials.Init(LocalConfigs.ConsumerKey, LocalConfigs.SecretKey, LocalConfigs.AutodeskBaseUrl);
+        }
+    }
 }
