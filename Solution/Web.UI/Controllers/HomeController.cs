@@ -10,10 +10,12 @@ namespace Web.UI.Controllers
 {
     public class HomeController : Controller
     {
+        private RestClient TestClient = new RestClient();
+
         //
         // GET: /Home/
         public ActionResult Index()
-        {s
+        {
             return View();
         }
 	}
