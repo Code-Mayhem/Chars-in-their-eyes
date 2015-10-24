@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis.Service", "Tex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockworkSMS.Service", "ClockworkSMS.Service\ClockworkSMS.Service.csproj", "{475B89B6-318E-49F4-8886-D64D28E9C6A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDesk.Service", "AutoDesk.Service\AutoDesk.Service.csproj", "{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +38,14 @@ Global
 		{475B89B6-318E-49F4-8886-D64D28E9C6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{475B89B6-318E-49F4-8886-D64D28E9C6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{475B89B6-318E-49F4-8886-D64D28E9C6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBB1C27-8CFA-403F-9521-2A0351B93A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

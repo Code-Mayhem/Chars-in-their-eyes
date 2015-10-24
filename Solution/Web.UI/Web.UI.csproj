@@ -83,10 +83,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\BasicExtension.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Viewer.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="LocalConfigs.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -96,6 +109,17 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery-1.11.3.min.map" />
+    <Content Include="GetAccessToken.aspx" />
+    <Compile Include="GetAccessToken.aspx.cs">
+      <DependentUpon>GetAccessToken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetAccessToken.aspx.designer.cs">
+      <DependentUpon>GetAccessToken.aspx</DependentUpon>
+    </Compile>
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -117,6 +141,16 @@
     <Folder Include="_source\styles\_settings\" />
     <Folder Include="_source\styles\_tools\" />
     <Folder Include="_source\styles\_trumps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoDesk.Service\AutoDesk.Service.csproj">
+      <Project>{bdbb1c27-8cfa-403f-9521-2a0351b93a4c}</Project>
+      <Name>AutoDesk.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{b2b57d7b-ad98-4b40-b7eb-dc4eaa2ccd1b}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
