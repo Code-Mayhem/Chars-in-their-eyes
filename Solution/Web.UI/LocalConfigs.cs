@@ -8,8 +8,8 @@ namespace Web.UI
 {
     public static class LocalConfigs
     {
-        public static string ConsumerKey => ConfigurationManager.AppSettings["consumerKey"];
-        public static string SecretKey => ConfigurationManager.AppSettings["secretKey"];
-        public static string AutodeskBaseUrl => ConfigurationManager.AppSettings["autodeskBaseUrl"];
+        public static string ConsumerKey = ConfigurationManager.AppSettings["consumerKey"];
+        public static string SecretKey = ConfigurationManager.AppSettings["secretKey"];
+        public static string AutodeskBaseUrl = ConfigurationManager.AppSettings["autodeskBaseUrl"];
     }
 }
