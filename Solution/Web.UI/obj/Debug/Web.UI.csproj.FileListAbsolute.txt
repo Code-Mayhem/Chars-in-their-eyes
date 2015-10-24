@@ -35,3 +35,9 @@ D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\b
 D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\obj\Debug\Web.UI.csprojResolveAssemblyReference.cache
 D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\obj\Debug\Web.UI.dll
 D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\obj\Debug\Web.UI.pdb
+D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\bin\AutoDesk.Service.dll
+D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\bin\Common.dll
+D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\bin\RestSharp.dll
+D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\bin\AutoDesk.Service.pdb
+D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\bin\Common.pdb
+D:\Development\Projects\Hackmanchester2015\Chars-in-their-eyes\Solution\Web.UI\bin\RestSharp.xml
