@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 using Common;
 using RestSharp;
 
@@ -27,7 +23,7 @@ namespace AutoDesk.Service
 
             var resp = mClient.Execute(req);
 
-            var accessToken = resp.StatusCode == System.Net.HttpStatusCode.OK ? resp.Content : null;
+            var accessToken = resp.StatusCode == HttpStatusCode.OK ? resp.Content : null;
 
             return accessToken;
         }
