@@ -11,7 +11,7 @@
         //default model urn, you need to change is to your own
         if (urn == null || urn === "") {
             console.log("x");
-            urn = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZGFuaWVsX3RyYW5zbGF0ZV9idWNrZXQzL0RyaWxsLmR3Zng=';
+            urn = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZGV2YnVja2V0L0RyaWxsLmR3Zng=';
         }
         if (urn.substr(0,4) !=='urn:') {
             urn = 'urn:' + urn;
