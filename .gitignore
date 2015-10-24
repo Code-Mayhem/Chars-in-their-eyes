@@ -8,6 +8,7 @@
 *.sln.docstates
 *.svn
 .svn/
+.vs/
 
 # Build results
 
