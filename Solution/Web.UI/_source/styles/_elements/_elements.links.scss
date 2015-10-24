@@ -1,9 +1,0 @@
-//links - styles for links
-a {
-	color: $c-link;
-	text-decoration: none;
-	&:hover {
-		text-decoration: underline;
-		color: $c-link-hover;
-	}
-}
