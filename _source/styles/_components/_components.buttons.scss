@@ -1,0 +1,76 @@
+// button styles
+
+.btn {
+		color: $linkBtnColor;
+		background: $linkBtnBg;
+		padding: remify(10px) remify(15px);
+		border-radius: remify(2px);
+		display: inline-block;
+		text-decoration: none;
+
+		&:after{
+			content: "";
+			display: inline-block;
+			background: url(../images/global/chevron.png) no-repeat 0 0;
+			background: linear-gradient(transparent, transparent), url(../images/global/chevron.svg) no-repeat 0 0;
+			width: remify(5px);
+			height: remify(8px);
+			margin-left: remify(8px);
+			position: relative;
+			top: -1px;
+		}
+
+		&:hover{
+			background-color: $linkBtnBg-hover;
+			color: $linkBtnColor-hover;
+			text-decoration: none;
+		&:after{
+			background-position-y: remify(-10px);
+		}
+	}
+
+	&--light {
+		color: $linkBtnBg-hover;
+		background: $linkBtnColor-hover;
+		&:hover {
+			background-color: $linkBtnBg-hover;
+        	color: $linkBtnColor-hover;
+		}
+	}
+
+
+	&--george {
+		color: $linkBtnColor-hover;
+		background-color: $linkBtnBg-hover;
+		&:after{
+			background-position: 0 -10px;
+		}
+		&:hover {
+			color: $linkBtnBg-hover;
+			background-color: $georgeLinkBg-hover;
+			&:after {
+				background-position: 0 0;
+			}
+		}
+	}
+
+	&--tag {
+		color: $linkBtnColor-hover;
+		background: $tagBtnColor;
+		&:after {
+			background-position: 0 -10px;
+		}
+		&:hover {
+			background-color: $linkBtnBg-hover;
+        	color: $linkBtnColor-hover;
+		}
+	}
+
+	&--promoted {
+		background: $promotedBtnColor;
+		&:hover {
+			background-color: $linkBtnBg-hover;
+        	color: $linkBtnColor-hover;
+		}
+	}
+}

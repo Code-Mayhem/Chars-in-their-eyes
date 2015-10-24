@@ -1,0 +1,34 @@
+//social icons - links ofr follow
+.social__link {
+	
+	width: remify(35px);
+	height: remify(35px);
+	display: inline-block;
+	text-indent: -9999em;
+
+	&--facebook {
+		background: url(../images/global/social.png) no-repeat 0 0;
+		background: linear-gradient(transparent, transparent), url(../images/global/social.svg) no-repeat 0 0;
+	}
+
+	&--twitter {
+		background: url(../images/global/social.png) no-repeat -42px 0;
+		background: linear-gradient(transparent, transparent), url(../images/global/social.svg) no-repeat -42px 0;
+	}
+
+	&--pintrest {
+		background: url(../images/global/social.png) no-repeat -126px 0;
+		background: linear-gradient(transparent, transparent), url(../images/global/social.svg) no-repeat -126px 0;
+	}
+
+	&--youtube {
+		background: url(../images/global/social.png) no-repeat -84px 0;
+		background: linear-gradient(transparent, transparent), url(../images/global/social.svg) no-repeat -84px 0;
+	}
+
+	&:hover {
+		background-position-y: -40px;
+	}
+}
+
+

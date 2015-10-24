@@ -1,0 +1,45 @@
+//page - styles for links
+html {
+	font-size: ($base-font-size / 16px) * 1em;
+	line-height: $base-line-height / $base-font-size;
+	color: $c-body-copy;
+	font-family: $bodyFont;
+	font-weight: normal;
+}
+h1 {
+	font-size: remify(22px);
+	font-family: $headingFont;
+	font-weight: normal;
+	margin-bottom: remify(20px);
+
+	@include respond-to-min($small){
+		font-size: remify(28px);
+	}
+
+	@include respond-to-min($med){
+		font-size: remify(32px);
+	}
+
+
+}
+h2 {
+	font-size: remify(22px);
+	font-family: $headingFont;
+	font-weight: normal;
+	margin-bottom: remify(20px);
+}
+h3 {
+	font-size: remify(20px);
+	font-family: $headingFont;
+	font-weight: normal;
+	margin-bottom: remify(10px);
+}
+p {
+	font-size: remify(14px);
+	margin: remify(10px) 0;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}

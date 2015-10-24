@@ -1,0 +1,14 @@
+// breakpoints - values for breakpoint widths.
+
+// these are 'em' widths based on default font size of 16px;
+
+$small: 				28.750em; //460px;
+$med: 					42.500em; //680px;
+$large: 				60.000em; //960px;
+$max: 					63.750em; //1020px;
+
+//extra breakpoints
+$nav:					35.625em; //570px;
+$footer:				56.250em; //900px;
+$footerBanners:			31.250em; //500px;
+$pageNotFound:					$nav;
