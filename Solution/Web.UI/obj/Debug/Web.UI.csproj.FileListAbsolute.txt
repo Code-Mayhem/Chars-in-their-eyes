@@ -16,3 +16,5 @@ D:\Projects\Chars-in-their-eyes\Solution\Web.UI\bin\System.Web.Mvc.xml
 D:\Projects\Chars-in-their-eyes\Solution\Web.UI\obj\Debug\Web.UI.csprojResolveAssemblyReference.cache
 D:\Projects\Chars-in-their-eyes\Solution\Web.UI\obj\Debug\Web.UI.dll
 D:\Projects\Chars-in-their-eyes\Solution\Web.UI\obj\Debug\Web.UI.pdb
+D:\Projects\Chars-in-their-eyes\Solution\Web.UI\bin\Newtonsoft.Json.dll
+D:\Projects\Chars-in-their-eyes\Solution\Web.UI\bin\Newtonsoft.Json.xml
