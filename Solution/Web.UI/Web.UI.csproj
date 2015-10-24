@@ -93,19 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\BasicExtension.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\jquery-1.11.3.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Viewer.js" />
     <Content Include="Web.config" />
+    <Content Include="_source\scripts\BasicExtension.js" />
+    <Content Include="_source\scripts\jquery-1.10.2.min.map" />
+    <Content Include="_source\scripts\jquery-1.11.3.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -119,8 +110,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Scripts\jquery-1.11.3.min.map" />
     <Content Include="GetAccessToken.aspx" />
     <Compile Include="GetAccessToken.aspx.cs">
       <DependentUpon>GetAccessToken.aspx</DependentUpon>
@@ -136,7 +125,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <None Include="_source\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="_source\scripts\jquery-1.10.2.js" />
+    <Content Include="_source\scripts\jquery-1.10.2.min.js" />
     <Content Include="_source\scripts\jquery-1.11.3.min.js" />
+    <None Include="_source\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="_source\scripts\jquery.validate.js" />
+    <Content Include="_source\scripts\jquery.validate.min.js" />
+    <Content Include="_source\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="_source\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="_source\scripts\Viewer.js" />
     <Content Include="_source\styles\main.scss" />
   </ItemGroup>
   <ItemGroup>
