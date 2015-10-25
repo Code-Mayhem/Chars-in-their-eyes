@@ -341,7 +341,7 @@ namespace ViwerSteps
 
 			private void saveToJson(string fileUrn, string tags, string filename)
 			{
-				var filePath = string.Format("{0}\\models.json", new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.Parent.FullName);
+				var filePath = string.Format("c:\\models.json");
 			
 				var reader = new StreamReader(filePath);
 				var jsonReader = new JsonTextReader(reader);

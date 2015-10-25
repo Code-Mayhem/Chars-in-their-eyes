@@ -16,7 +16,7 @@ namespace ClockworkSMS.Service
         private static ExternalApiSmsService _instance;
         private int _millisecondsTimeout;
 
-        private Dictionary<string, SMS> SmsCache { get; } 
+				private Dictionary<string, SMS> SmsCache { get; set; } 
 
         public static ExternalApiSmsService Instance
         {
