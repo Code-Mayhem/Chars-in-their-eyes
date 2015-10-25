@@ -23,7 +23,11 @@
 			smsRenderHub.client.addNewSmsRenders = function (renderModel) {
 				//console.log(renderModel);
 
-				var test = JSON.parse(renderModel);
+				var dec = decodeURI(renderModel);
+
+				var test = JSON.parse(dec);
+
+
 				console.log(test);
 
 				handlebarsObject(test);

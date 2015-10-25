@@ -17,8 +17,8 @@
 	}
 
 	&__item {
-		background-color: $c-green;
-		width: 92%;
+		background-color: $c-light-grey;
+		width: 82%;
 		height: 120px;
 		margin: 5px 4%;
 		padding: 0;
@@ -27,14 +27,17 @@
 		overflow: hidden;
 		box-shadow: 1px 1px 2px $c-background-black;
 		animation: loadGrid 2s linear;
+		padding: 20px 5%;
 
 		&-image {
 			position: absolute;
 		}
 
 		&--large {
+			background-color: $c-green;
+			width: 92%;
 			height: 240px;
-			background-color: darkblue;
+			padding: 0;
 		}
 	}
 }

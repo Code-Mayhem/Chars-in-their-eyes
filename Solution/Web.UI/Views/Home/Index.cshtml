@@ -30,7 +30,7 @@
 			<div class="grid">
 				{{#this}}
 					<div class="grid__strip">
-							<div data-grid-item class="grid__item">
+							<div data-grid-item class="grid__item grid__item--large">
 
 								<picture>
 									<img data-thumbnail class="grid__item-image" src="" />
@@ -39,7 +39,10 @@
 								<div class="button" data-load-model="{{Urn}}"></div>
 
 							</div>
-							<div class="grid__item grid__item--large"></div>
+							<div class="grid__item">
+								<h2>+{{Sms.FromNumber}}</h2>
+								<p>{{Sms.Text}}</p>
+							</div>
 					</div>
 				{{/this}}
 
