@@ -4,11 +4,14 @@
 	window.code = window.code || {};
 	var viewer = window.code.viewer = function (options) {
 
+		var viewerElement = document.getElementById('viewer');
+
 		var loadModel = '[data-load-model]';
 		var loadModelData = 'loadModel';
 		var autodeskView = '[data-autodesk-view]';
 
 		var urnToLoad;
+		var options = {};
 
 		function init() {
 			handleEvent();
@@ -24,30 +27,27 @@
 			urnToLoad = $this.data(loadModelData);
 		}
 
-		function initialize() {
-
+		function setUrn() {
 			var urn = $('#urn').val();
 
-			if (urn == null || urn === "") {
-				urn = urnToLoad;
-			}
+			if (urn == null || urn === "") urn = urnToLoad;
 
-			if (urn.substr(0, 4) !== 'urn:') {
-				urn = 'urn:' + urn;
-			}
+			if (urn.substr(0, 4) !== 'urn:') urn = 'urn:' + urn;
 
-			var options = {
+			options = {
 				'document': urn,
 				'getAccessToken': getToken,
 				'refreshToken': getToken,
 			};
+		}
 
-			var viewerElement = document.getElementById('viewer');
+		function initialize() {
+
+			setUrn();
 
 			viewer = new Autodesk.Viewing.Private.GuiViewer3D(viewerElement, {
 				extensions: ['BasicExtension']
 			});
-
 
 			Autodesk.Viewing.Initializer(options, function () {
 				viewer.start();
@@ -67,8 +67,6 @@
 				if (geometryItems.length < 0) return;
 
 				viewer.load(doc.getViewablePath(geometryItems[0]));
-
-				
 
 			}, function (errorMsg) {
 				alert("Load Error: " + errorMsg);
