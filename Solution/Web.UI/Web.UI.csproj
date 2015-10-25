@@ -156,8 +156,10 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="_source\scripts\handlebars-v4.0.2.js" />
     <Content Include="_source\scripts\jquery-1.11.3.min.js" />
     <Content Include="_source\scripts\overlay.js" />
+    <Content Include="_source\scripts\renderView.js" />
     <Content Include="_source\scripts\setThumbnailHeight.js" />
     <Content Include="_source\scripts\Viewer.js" />
     <Content Include="_source\styles\main.scss" />
