@@ -22,7 +22,7 @@ namespace Web.UI.Controllers
 	        SmsAnalyzer.Publish += () =>
 	        {
 	            RenderModels = SmsAnalyzer.SmsRenderModelsCache;
-	            var json = SmsAnalyzer.SmsRenderModelsAsJson;
+	            UpdateModel(RenderModels, "RenderModels");
 	        };
 	    }
 
