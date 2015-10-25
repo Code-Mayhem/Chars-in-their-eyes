@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AutoDesk.Service;
 using RestSharp;
+using ViewerHelperApp;
 
 namespace Web.UI.Controllers
 {
@@ -16,7 +17,7 @@ namespace Web.UI.Controllers
         // GET: /Home/
         public ActionResult Index()
         {
-            return View();
+            return View(new ModelList(){Models = new List<Model>(){new Model(){ FileName = "abc"}}});
         }
 	}
 }

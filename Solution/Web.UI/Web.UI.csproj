@@ -93,10 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
     <Content Include="Web.config" />
     <Content Include="_source\scripts\BasicExtension.js" />
-    <Content Include="_source\scripts\jquery-1.10.2.min.map" />
-    <Content Include="_source\scripts\jquery-1.11.3.min.map" />
+    <None Include="_source\styles\_tools\_setting-utils.scss" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -125,29 +125,23 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <None Include="_source\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="_source\scripts\jquery-1.10.2.js" />
-    <Content Include="_source\scripts\jquery-1.10.2.min.js" />
     <Content Include="_source\scripts\jquery-1.11.3.min.js" />
-    <None Include="_source\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="_source\scripts\jquery.validate.js" />
-    <Content Include="_source\scripts\jquery.validate.min.js" />
-    <Content Include="_source\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="_source\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="_source\scripts\overlay.js" />
     <Content Include="_source\scripts\Viewer.js" />
     <Content Include="_source\styles\main.scss" />
+    <Content Include="_source\styles\_generic\_generic-default.scss" />
+    <Content Include="_source\styles\_settings\_settings.colors.scss" />
+    <Content Include="_source\styles\_components\_components-grid.scss" />
+    <Content Include="_source\styles\_components\_components-header.scss" />
+    <Content Include="_source\styles\_elements\_elements-forms.scss" />
+    <Content Include="_source\styles\_components\_components-autodesk.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="_source\fonts\" />
     <Folder Include="_source\images\" />
-    <Folder Include="_source\styles\_components\" />
-    <Folder Include="_source\styles\_elements\" />
-    <Folder Include="_source\styles\_generic\" />
     <Folder Include="_source\styles\_objects\" />
-    <Folder Include="_source\styles\_settings\" />
-    <Folder Include="_source\styles\_tools\" />
     <Folder Include="_source\styles\_trumps\" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +152,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{b2b57d7b-ad98-4b40-b7eb-dc4eaa2ccd1b}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewerHelperApp\ViewerHelperApp.csproj">
+      <Project>{dae5d2de-fe3d-4e54-9f1d-0b4b8afc5ee8}</Project>
+      <Name>ViewerHelperApp</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

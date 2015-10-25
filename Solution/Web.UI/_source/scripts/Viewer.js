@@ -5,14 +5,23 @@
 	var viewer = window.code.viewer = function (options) {
 
 		var loadModel = '[data-load-model]';
+		var loadModelData = 'loadModel';
 		var autodeskView = '[data-autodesk-view]';
+
+		var urnToLoad;
 
 		function init() {
 			handleEvent();
 		}
 
 		function handleEvent() {
+			$(loadModel).on('click', getUrn);
 			$(loadModel).on('click', initialize);
+		}
+
+		function getUrn(e) {
+			var $this = $(e.target);
+			urnToLoad = $this.data(loadModelData);
 		}
 
 		function initialize() {
@@ -20,7 +29,7 @@
 			var urn = $('#urn').val();
 
 			if (urn == null || urn === "") {
-				urn = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZGV2YnVja2V0L0RyaWxsLmR3Zng=';
+				urn = urnToLoad;
 			}
 
 			if (urn.substr(0, 4) !== 'urn:') {

@@ -20,7 +20,15 @@
 		margin: 4%;
 		padding: 0;
 		float: left;
+		position: relative;
+		overflow: hidden;
 		animation: example 2s linear;
+
+		&-image {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
 
 		&:hover:before {
 			//content: '';
