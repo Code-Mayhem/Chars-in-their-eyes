@@ -1,8 +1,8 @@
-﻿namespace ViewerHelperApp
-{
-	using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-	public class ModelList
+namespace Common
+{
+    public class ModelList
 	{
 		public List<Model> Models { get; set; }
 	}

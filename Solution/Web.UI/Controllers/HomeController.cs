@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using AutoDesk.Service;
 
 namespace Web.UI.Controllers
 {
+	using Common;
+
 	using TextAnalysis;
 
 	using Web.UI.ViewModels;
@@ -17,7 +15,7 @@ namespace Web.UI.Controllers
         // GET: /Home/
 	    public ActionResult Index()
 	    {
-		    return View();
+            return View(new ModelList(){Models = new List<Model>(){new Model(){ FileName = "abc"}}});
 	    }
 
 			public ActionResult Analyse()

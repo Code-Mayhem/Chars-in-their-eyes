@@ -16,7 +16,7 @@ var config = {
 	src: './_source',
 	dest: './_build',
 	styles: '/styles',
-	scripts: '/javascript'
+	scripts: '/scripts'
 };
 
 var src = {

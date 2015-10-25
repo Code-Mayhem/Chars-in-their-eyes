@@ -42,12 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.1-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -93,19 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\BasicExtension.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\jquery-1.11.3.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Viewer.js" />
+    <Content Include="gulpfile.js" />
     <Content Include="Web.config" />
+    <Content Include="_source\scripts\BasicExtension.js" />
+    <None Include="_source\styles\_tools\_setting-utils.scss" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -120,8 +111,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Scripts\jquery-1.11.3.min.map" />
     <Content Include="GetAccessToken.aspx" />
     <Compile Include="GetAccessToken.aspx.cs">
       <DependentUpon>GetAccessToken.aspx</DependentUpon>
@@ -139,25 +128,32 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="_source\scripts\jquery-1.11.3.min.js" />
+    <Content Include="_source\scripts\overlay.js" />
+    <Content Include="_source\scripts\Viewer.js" />
     <Content Include="_source\styles\main.scss" />
+    <Content Include="_source\styles\_generic\_generic-default.scss" />
+    <Content Include="_source\styles\_settings\_settings.colors.scss" />
+    <Content Include="_source\styles\_components\_components-grid.scss" />
+    <Content Include="_source\styles\_components\_components-header.scss" />
+    <Content Include="_source\styles\_elements\_elements-forms.scss" />
+    <Content Include="_source\styles\_components\_components-autodesk.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="_source\fonts\" />
     <Folder Include="_source\images\" />
-    <Folder Include="_source\styles\_components\" />
-    <Folder Include="_source\styles\_elements\" />
-    <Folder Include="_source\styles\_generic\" />
     <Folder Include="_source\styles\_objects\" />
-    <Folder Include="_source\styles\_settings\" />
-    <Folder Include="_source\styles\_tools\" />
     <Folder Include="_source\styles\_trumps\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AutoDesk.Service\AutoDesk.Service.csproj">
       <Project>{bdbb1c27-8cfa-403f-9521-2a0351b93a4c}</Project>
       <Name>AutoDesk.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClockworkSMS.Service\ClockworkSMS.Service.csproj">
+      <Project>{475b89b6-318e-49f4-8886-d64d28e9c6a4}</Project>
+      <Name>ClockworkSMS.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{b2b57d7b-ad98-4b40-b7eb-dc4eaa2ccd1b}</Project>
@@ -166,6 +162,10 @@
     <ProjectReference Include="..\TextAnalysis\TextAnalysis.Service.csproj">
       <Project>{4CF03CBF-E0A5-4237-B476-BCF9A25D9D69}</Project>
       <Name>TextAnalysis.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewerHelperApp\ViewerHelperApp.csproj">
+      <Project>{dae5d2de-fe3d-4e54-9f1d-0b4b8afc5ee8}</Project>
+      <Name>ViewerHelperApp</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

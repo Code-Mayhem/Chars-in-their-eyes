@@ -4,6 +4,7 @@
     display: inline-block;
     width: 90%;
     margin: 20px 5%;
+	position: relative;
 
 	&__strip {
 		display: inline-block;
@@ -19,15 +20,24 @@
 		margin: 4%;
 		padding: 0;
 		float: left;
+		position: relative;
+		overflow: hidden;
 		animation: example 2s linear;
 
+		&-image {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
 		&:hover:before {
-			content: '';
+			//content: '';
 			background-color: cyan;
 			display: inline-block;
 			width: 100%;
 			height: 120px;
 			opacity: 0.5;
+			display: none;
 		}
 
 		&--large {
@@ -35,7 +45,7 @@
 			background-color: darkblue;
 
 			&:hover:before {
-				content: '';
+				//content: '';
 				background-color: cyan;
 				display: inline-block;
 				width: 100%;
@@ -47,6 +57,6 @@
 }
 
 @keyframes example {
-    0% { height: 0; }
-	50% { height: 120px; }
+    0% { transform: rotateY(60deg); }
+	50% { transform: rotateY(0deg); }
 }
