@@ -8,6 +8,9 @@
 	{
 		[JsonProperty(PropertyName = "keywords")]
 		public List<Keyword> Keywords { get; set; }
+
+        [JsonProperty(PropertyName = "status")]
+        public string Status { get; set; }
 	}
 
 	public class Keyword
