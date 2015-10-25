@@ -21,18 +21,17 @@
 			var smsRenderHub = $.connection.smsRenderHub;
 
 			smsRenderHub.client.addNewSmsRenders = function (renderModel) {
-				console.log(renderModel);
+				//console.log(renderModel);
 
-				handlebarsObject(renderModel);
+				var test = JSON.parse(renderModel);
+				console.log(test);
+
+				handlebarsObject(test);
 			};
 
 			$.connection.hub.start().done(function () {
 				smsRenderHub.server.sendNewSmsRenders();
 			});
-
-			//console.log(data);
-
-			//return data;
 		}
 
 		function handlebarsObject(data) {

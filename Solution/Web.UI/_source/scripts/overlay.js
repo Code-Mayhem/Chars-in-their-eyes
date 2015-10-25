@@ -8,6 +8,8 @@
 		var overlayBg = '[data-overlay-bg]';
 		var closeBtn = '[data-close-btn]';
 
+		var dataRender = '[data-render]';
+
 		var displayNone = 'u-display--none';
 
 		var model = '#viewer';
@@ -17,7 +19,7 @@
 		}
 
 		function handleEvent() {
-			$(loadModel).on('click', showOverlayBg);
+			$(dataRender).on('click', loadModel, showOverlayBg);
 			$(closeBtn).on('click', hideOverlayBg);
 		}
 

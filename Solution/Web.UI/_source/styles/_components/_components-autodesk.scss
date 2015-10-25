@@ -11,8 +11,13 @@
 }
 
 .adsk-viewing-viewer {
-    left: 0;
-    top: 0;
+	//I was forced to use this
+	height: 40%!important;
+	width: 94%!important;
+	margin: 70px 3%;
+	overflow: hidden;  
+    top: 0;  
+	left: 0;
 }
 
 .close-btn {
