@@ -10,6 +10,7 @@
 
 			<link rel="stylesheet"type="text/css" href="../_build/styles/main.css"/>
 			<link type="text/css" rel="stylesheet" href="https://viewing.api.autodesk.com/viewingservice/v1/viewers/style.css?v=v1.2.15"/>
+			<link href='https://fonts.googleapis.com/css?family=Cabin:600' rel='stylesheet' type='text/css'>
 
 			<title>|_0_|</title>
 	</head>
@@ -26,9 +27,11 @@
 			<div class="grid">
 
 					<div class="grid__strip">
-							<div class="grid__item">
+							<div data-grid-item class="grid__item">
 
-								<img class="grid__item-image" src="http://7-themes.com/data_images/out/2/6775415-beautiful-images.jpg" />
+								<picture>
+									<img data-thumbnail class="grid__item-image" src="http://7-themes.com/data_images/out/2/6775415-beautiful-images.jpg" />
+								</picture>
 
 								<div class="button" data-load-model="urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZGV2YnVja2V0L0RyaWxsLmR3Zng="></div>
 
@@ -63,6 +66,7 @@
 			<script src="../_build/scripts/BasicExtension.js"></script>
 			<script src="../_build/scripts/Viewer.js"></script>
 			<script src="../_build/scripts/overlay.js"></script>
+			<script src="../_build/scripts/setThumbnailHeight.js"></script>
 
 	</body>
 </html>

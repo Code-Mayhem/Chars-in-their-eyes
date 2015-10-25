@@ -2,27 +2,27 @@
 
 .grid {
     display: inline-block;
-    width: 90%;
-    margin: 20px 5%;
+    width: 94%;
+    margin: 20px 3%;
 	position: relative;
 
 	&__strip {
 		display: inline-block;
 		width: 33.3%;
 		margin-right: -4px;
-		background: rebeccapurple;
 	}
 
 	&__item {
-		background-color: red;
+		background-color: $c-green;
 		width: 92%;
 		height: 120px;
 		margin: 4%;
 		padding: 0;
 		float: left;
-		position: relative;
+		//position: relative;
 		overflow: hidden;
-		animation: example 2s linear;
+		box-shadow: 1px 1px 2px $c-background-black;
+		animation: loadGrid 2s linear;
 
 		&-image {
 			position: absolute;
@@ -30,33 +30,14 @@
 			height: 100%;
 		}
 
-		&:hover:before {
-			//content: '';
-			background-color: cyan;
-			display: inline-block;
-			width: 100%;
-			height: 120px;
-			opacity: 0.5;
-			display: none;
-		}
-
 		&--large {
 			height: 240px;
 			background-color: darkblue;
-
-			&:hover:before {
-				//content: '';
-				background-color: cyan;
-				display: inline-block;
-				width: 100%;
-				height: 240px;
-				opacity: 0.5;
-			}
 		}
 	}
 }
 
-@keyframes example {
+@keyframes loadGrid {
     0% { transform: rotateY(60deg); }
 	50% { transform: rotateY(0deg); }
 }
