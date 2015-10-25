@@ -26,7 +26,7 @@
 				var width = $(parent).width();
 
 				$(this).width(width);
-				$(this).height(height);
+				//$(this).height(height);
 
 			});
 
