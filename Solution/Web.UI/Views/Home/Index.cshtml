@@ -96,5 +96,15 @@
             </script>
 
 
+			<script src="/socket.io/socket.io.js"></script>
+			<script>
+				var socket = io('http://localhost');
+				socket.on('connect', function () {
+					console.log('user connected');
+				});
+				socket.on('event', function(data){});
+				socket.on('disconnect', function(){});
+			</script>
+
 	</body>
 </html>
