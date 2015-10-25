@@ -48,13 +48,7 @@
 			};
 
 			$.connection.hub.start().done(function () {
-				//smsRenderHub.server.sendNewSmsRenders();
-
-				setInterval(function () {
-					$(render).empty();
-					smsRenderHub.server.sendNewSmsRenders();
-					
-				}, 300000);
+				smsRenderHub.server.sendNewSmsRenders();
 			});
 		}
 
