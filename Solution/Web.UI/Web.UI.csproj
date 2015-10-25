@@ -96,7 +96,8 @@
     <Content Include="gulpfile.js" />
     <Content Include="Web.config" />
     <Content Include="_source\scripts\BasicExtension.js" />
-    <None Include="_source\styles\_tools\_setting-utils.scss" />
+    <None Include="_source\styles\_tools\_tools-utils.scss" />
+    <None Include="_source\styles\_tools\_tools-mixins.scss" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -129,10 +130,11 @@
     </None>
     <Content Include="_source\scripts\jquery-1.11.3.min.js" />
     <Content Include="_source\scripts\overlay.js" />
+    <Content Include="_source\scripts\setThumbnailHeight.js" />
     <Content Include="_source\scripts\Viewer.js" />
     <Content Include="_source\styles\main.scss" />
     <Content Include="_source\styles\_generic\_generic-default.scss" />
-    <Content Include="_source\styles\_settings\_settings.colors.scss" />
+    <Content Include="_source\styles\_settings\_settings-vars.scss" />
     <Content Include="_source\styles\_components\_components-grid.scss" />
     <Content Include="_source\styles\_components\_components-header.scss" />
     <Content Include="_source\styles\_elements\_elements-forms.scss" />
