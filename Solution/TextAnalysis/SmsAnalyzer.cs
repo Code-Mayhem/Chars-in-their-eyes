@@ -35,13 +35,24 @@ namespace TextAnalysis
                 {
                     ProcessedSmsHashes.AddRange(smsRenderModels.Select(s => s.Sms.Hash));
                     SmsRenderModelsCache.AddRange(smsRenderModels);
+									// call control
                 }
             };
         }
 
         public IEnumerable<SmsRenderModel> ProcessSms(IEnumerable<KeyValuePair<string, SMS>> unprocessedSms)
         {
-            return new List<SmsRenderModel>();
+					var model = new List<SmsRenderModel>();
+	        var textAnalyzerService = new TextAnalyzerService();
+
+	        foreach (var sms in unprocessedSms)
+	        {
+		        var urn = textAnalyzerService.AnalyzeText(sms.Value.Text);
+		        var smsRenderModel = new SmsRenderModel { Sms = sms.Value, Urn = urn };
+						model.Add(smsRenderModel);
+	        }
+
+	        return model;
         }
     }
 }
