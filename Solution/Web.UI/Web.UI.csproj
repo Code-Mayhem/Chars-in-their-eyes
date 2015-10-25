@@ -115,6 +115,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AnalyseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -130,6 +131,7 @@
       <DependentUpon>GetAccessToken.aspx</DependentUpon>
     </Compile>
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Analyse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,6 +162,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{b2b57d7b-ad98-4b40-b7eb-dc4eaa2ccd1b}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextAnalysis\TextAnalysis.Service.csproj">
+      <Project>{4CF03CBF-E0A5-4237-B476-BCF9A25D9D69}</Project>
+      <Name>TextAnalysis.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
