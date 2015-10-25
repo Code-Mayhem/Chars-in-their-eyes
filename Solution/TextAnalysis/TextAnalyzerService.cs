@@ -1,22 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextAnalysis
 {
-    public class TextAnalyzerService : ITextAnalyzerService
+	using System.IO;
+
+	using Common;
+
+	using Newtonsoft.Json;
+
+	using ViewerHelperApp;
+
+	public class TextAnalyzerService : ITextAnalyzerService
     {
-        public void AnalyzeText(string text)
-        {
-            throw new NotImplementedException();
-        }
+	    public string AnalyzeText(string text)
+	    {
+		    if (text == null || text.Length < 5) text = "empty";
+
+				var alchemyObj = new AlchemyAPI();
+				alchemyObj.LoadAPIKey("2bfb53d6c8ac06b2ac12e6a0d3766d66b2aba44b");
+
+				var json = alchemyObj.TextGetRankedKeywords(text);
+
+				// Get keywords from json
+				var response = JsonConvert.DeserializeObject<AlchemyRs>(json);
+				
+				var filePath = string.Format("c:\\models.json");
+
+				var reader = new StreamReader(filePath);
+				var jsonReader = new JsonTextReader(reader);
+				var serializer = new JsonSerializer();
+				var modelList = serializer.Deserialize<ModelList>(jsonReader);
+				jsonReader.Close();
+
+		    foreach (var keyword in response.Keywords)
+		    {
+			    foreach (var model in modelList.Models)
+			    {
+				    //if(model.Tags.Contains(keyword))
+			    }
+		    }
+				
+
+				// Post to front end
+
+
+		    return json;
+	    }
     }
 
     public interface ITextAnalyzerService
     {
-        void AnalyzeText(string text);
+        string AnalyzeText(string text);
     }
 }
