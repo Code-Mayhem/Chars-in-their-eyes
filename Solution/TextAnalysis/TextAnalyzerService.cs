@@ -46,12 +46,17 @@ namespace TextAnalysis
 	    private static AlchemyRs CallAlchemyApiAnalysisOnText(string text)
 	    {
 	        var alchemyObj = new AlchemyAPI();
-	        alchemyObj.LoadAPIKey("2bfb53d6c8ac06b2ac12e6a0d3766d66b2aba44b");
+	        alchemyObj.LoadAPIKey("90f8dd08773b83ad901735d47e25b1d2b04228d3");
 
 	        var json = alchemyObj.TextGetRankedKeywords(text);
 
 	        // Get keywords from json
 	        var response = JsonConvert.DeserializeObject<AlchemyRs>(json);
+
+	        if (response.Status == "ERROR")
+	        {
+	            throw new Exception("Alchemy daily limit reached");
+	        }
 	        return response;
 	    }
     }
