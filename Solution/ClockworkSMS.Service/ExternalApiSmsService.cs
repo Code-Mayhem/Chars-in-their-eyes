@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common;
+using Newtonsoft.Json.Linq;
+using RestSharp;
 
 namespace ClockworkSMS.Service
 {
@@ -13,7 +16,7 @@ namespace ClockworkSMS.Service
         private static ExternalApiSmsService _instance;
         private int _millisecondsTimeout;
 
-        private List<SMS> SMSCache { get; set; } 
+        private Dictionary<string, SMS> SmsCache { get; } 
 
         public static ExternalApiSmsService Instance
         {
@@ -29,7 +32,7 @@ namespace ClockworkSMS.Service
 
         private ExternalApiSmsService()
         {
-            SMSCache = new List<SMS>();
+            SmsCache = new Dictionary<string, SMS>();
         }
 
         public void Start()
@@ -49,19 +52,44 @@ namespace ClockworkSMS.Service
 
         private void QueryExternalApi()
         {
-            //query the node heroki app
+            var mClient = new RestClient("https://mayhem-clockwork.herokuapp.com");
 
-            //SMSCache = ^
+            var req = new RestRequest
+            {
+                Resource = "/",
+                Method = Method.GET
+            };
+
+            var resp = mClient.Execute(req);
+
+            var content = resp.Content;
+
+            var smsListJsonTokens = JArray.Parse(content);
+
+            foreach (var smsJsonToken in smsListJsonTokens)
+            {
+                var sms = new SMS() {FromNumber = (string) smsJsonToken.SelectToken("from"), ID = (string) smsJsonToken.SelectToken("id"), Text = (string) smsJsonToken.SelectToken("content"), Timestamp = (string) smsJsonToken.SelectToken("timestamp")};
+                sms.Hash = ("" + sms.Timestamp + sms.Text + sms.FromNumber).ComputeHash(Hasher.eHashType.SHA1);
+                if (!SmsCache.ContainsKey(sms.Hash))
+                {
+                    SmsCache.Add(sms.Hash, sms);
+                }
+            }
         }
 
-        public List<SMS> GetAllSms()
+        public IEnumerable<SMS> GetAllSms()
         {
-            return SMSCache;
+            return SmsCache.Select(s => s.Value);
+        }
+
+        public IEnumerable<SMS> GetLastSms(int numberOfSms)
+        {
+            return SmsCache.Reverse().Take(numberOfSms).Select(s => s.Value);
         }
     }
 
     public interface IExternalApiSmsService : IService
     {
-        List<SMS> GetAllSms();
+        IEnumerable<SMS> GetAllSms();
     }
 }

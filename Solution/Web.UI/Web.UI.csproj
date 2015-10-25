@@ -42,12 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.1-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -154,6 +154,10 @@
     <ProjectReference Include="..\AutoDesk.Service\AutoDesk.Service.csproj">
       <Project>{bdbb1c27-8cfa-403f-9521-2a0351b93a4c}</Project>
       <Name>AutoDesk.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClockworkSMS.Service\ClockworkSMS.Service.csproj">
+      <Project>{475b89b6-318e-49f4-8886-d64d28e9c6a4}</Project>
+      <Name>ClockworkSMS.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{b2b57d7b-ad98-4b40-b7eb-dc4eaa2ccd1b}</Project>
