@@ -3,6 +3,7 @@
 namespace TextAnalysis
 {
 	using System.IO;
+	using System.Linq;
 
 	using Common;
 
@@ -36,14 +37,13 @@ namespace TextAnalysis
 		    {
 			    foreach (var model in modelList.Models)
 			    {
-				    //if(model.Tags.Contains(keyword))
+				    var tags = model.Tags.Split(',');
+				    foreach (var tag in tags.Where(tag => tag.Trim() == keyword.Text))
+				    {
+					    return string.Format("URN: {0}, Text: {1}", model.FileUrn, text);
+				    }
 			    }
 		    }
-				
-
-				// Post to front end
-
-
 		    return json;
 	    }
     }
