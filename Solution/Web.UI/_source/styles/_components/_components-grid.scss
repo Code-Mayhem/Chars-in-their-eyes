@@ -30,7 +30,9 @@
 		padding: 20px 5%;
 
 		&-image {
-			position: absolute;
+			height: 240px;
+			display: block;
+			margin: 0 auto;
 		}
 
 		&--large {
@@ -43,6 +45,19 @@
 }
 
 @keyframes loadGrid {
-    0% { transform: rotateY(60deg); }
-	50% { transform: rotateY(0deg); }
+    0% {
+			-webkit-transform: rotateY(60deg);
+			-moz-transform: rotateY(60deg);
+			-ms-transform: rotateY(60deg);
+			-o-transform: rotateY(60deg);
+			transform: rotateY(60deg); 
+		}
+
+	50% {
+			-webkit-transform: rotateY(0deg);
+			-moz-transform: rotateY(0deg);
+			-ms-transform: rotateY(0deg);
+			-o-transform: rotateY(0deg);
+			transform: rotateY(0deg);
+		}
 }
