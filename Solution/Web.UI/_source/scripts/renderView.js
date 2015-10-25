@@ -23,14 +23,11 @@
 			smsRenderHub.client.addNewSmsRenders = function (renderModel) {
 
 				var dec = decodeURI(renderModel);
-				var test = JSON.parse(dec);
-
-
-				//console.log(test);
+				var parse= JSON.parse(dec);
 				
-				for (var i = 0; i < test.length; i++) {
+				for (var i = 0; i < parse.length; i++) {
 
-					var urnCode = test[i].Urn;
+					var urnCode = parse[i].Urn;
 
 					var url = 'https://developer.api.autodesk.com/viewingservice/v1/thumbnails/' + urnCode;
 
@@ -39,14 +36,11 @@
 					req.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 					req.setRequestHeader('Authorization', 'Bearer' + getToken());
 					req.send(null);
-					//console.log(req.responseText);
-
-					test[i].thumbNail = url;
+					
+					parse[i].thumbNail = url;
 				}
 				
-				console.log(test);
-
-				handlebarsObject(test);
+				handlebarsObject(parse);
 			};
 
 			$.connection.hub.start().done(function () {
