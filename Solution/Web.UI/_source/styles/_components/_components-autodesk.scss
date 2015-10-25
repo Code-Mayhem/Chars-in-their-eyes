@@ -30,10 +30,18 @@
 	}
 
 	&:before {
+		-webkit-transform: rotateZ(45deg);
+		-moz-transform: rotateZ(45deg);
+		-ms-transform: rotateZ(45deg);
+		-o-transform: rotateZ(45deg);
 		transform: rotateZ(45deg);
 	}
 
 	&:after {
+		-webkit-transform: rotateZ(-45deg);
+		-moz-transform: rotateZ(-45deg);
+		-ms-transform: rotateZ(-45deg);
+		-o-transform: rotateZ(-45deg);
 		transform: rotateZ(-45deg);
 	}
 
