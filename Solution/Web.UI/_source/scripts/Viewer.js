@@ -5,9 +5,9 @@
 	var viewer = window.code.viewer = function (options) {
 
 		var loadModel = '[data-load-model]';
+		var autodeskView = '[data-autodesk-view]';
 
 		function init() {
-			//initialize();
 			handleEvent();
 		}
 
@@ -20,9 +20,9 @@
 			var urn = $('#urn').val();
 
 			if (urn == null || urn === "") {
-				console.log("x");
 				urn = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZGV2YnVja2V0L0RyaWxsLmR3Zng=';
 			}
+
 			if (urn.substr(0, 4) !== 'urn:') {
 				urn = 'urn:' + urn;
 			}
@@ -39,8 +39,6 @@
 				extensions: ['BasicExtension']
 			});
 
-
-			//initializer the viewer 
 
 			Autodesk.Viewing.Initializer(options, function () {
 				viewer.start();
@@ -60,6 +58,8 @@
 				if (geometryItems.length < 0) return;
 
 				viewer.load(doc.getViewablePath(geometryItems[0]));
+
+				
 
 			}, function (errorMsg) {
 				alert("Load Error: " + errorMsg);
