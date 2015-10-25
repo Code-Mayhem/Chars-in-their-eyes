@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClockworkSMS.Service;
+using Newtonsoft.Json;
 
 namespace TextAnalysis
 {
@@ -16,6 +17,15 @@ namespace TextAnalysis
 
         private ExternalApiSmsService ExternalApiSmsService { get; set; }
 
+        public string SmsRenderModelsAsJson
+        {
+            get
+            {
+                return JsonConvert.SerializeObject(SmsRenderModelsCache);
+                
+            }
+        }
+
         public static SmsAnalyzer Instance
         {
             get { return _instance ?? (_instance = new SmsAnalyzer()); }
@@ -25,6 +35,8 @@ namespace TextAnalysis
         {
             this.ExternalApiSmsService = ExternalApiSmsService.Instance;
             this.SmsRenderModelsCache = new List<SmsRenderModel>();
+            this.ProcessedSmsHashes = new List<string>();
+
             ExternalApiSmsService.Publish += () =>
             {
                 this.SmsCache = ExternalApiSmsService.GetAllSms().OrderBy(s => s.Value.Timestamp);
@@ -35,13 +47,27 @@ namespace TextAnalysis
                 {
                     ProcessedSmsHashes.AddRange(smsRenderModels.Select(s => s.Sms.Hash));
                     SmsRenderModelsCache.AddRange(smsRenderModels);
+
+                    Publish.Invoke();
                 }
             };
         }
 
         public IEnumerable<SmsRenderModel> ProcessSms(IEnumerable<KeyValuePair<string, SMS>> unprocessedSms)
         {
-            return new List<SmsRenderModel>();
+			var model = new List<SmsRenderModel>();
+	        var textAnalyzerService = new TextAnalyzerService();
+
+	        foreach (var sms in unprocessedSms)
+	        {
+		        var urn = textAnalyzerService.AnalyzeText(sms.Value.Text);
+		        var smsRenderModel = new SmsRenderModel { Sms = sms.Value, Urn = urn };
+				model.Add(smsRenderModel);
+	        }
+
+	        return model;
         }
+
+        public event Action Publish;
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<TextAnalysis.SmsRenderModel>
+@{
     Layout = null;
 }
 
@@ -16,13 +17,17 @@
 	</head>
 
 	<body>
-		
-		<header class="header">
 
-			<h1>Chars in their eyes</h1>
-			<div data-close-btn class="close-btn u-display--none"></div>
+	<header class="header">
 
-		</header>
+	    <h1>Chars in their eyes</h1>
+	    <div data-close-btn class="close-btn u-display--none"></div>
+
+	</header>
+        @foreach (var renderModel in Model)
+        {
+            Html.Raw(renderModel.Sms.FromNumber);
+        }
 
 			<div class="grid">
 

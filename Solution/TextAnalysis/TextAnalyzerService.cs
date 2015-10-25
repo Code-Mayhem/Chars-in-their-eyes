@@ -38,11 +38,11 @@ namespace TextAnalysis
 				    var tags = model.Tags.Split(',');
 				    foreach (var tag in tags.Where(tag => tag.Trim() == keyword.Text))
 				    {
-					    return string.Format("URN: {0}, Text: {1}", model.FileUrn, text);
+					    return model.FileUrn;
 				    }
 			    }
 		    }
-		    return json;
+				return "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Y2hhcnNpbnRoZWlyZXllcy9BdWRpK1I4LmRhZQ=="; // blank model
 	    }
     }
 
