@@ -9,14 +9,14 @@ namespace TextAnalysis
 {
     public class SmsAnalyzer
     {
-        private SmsAnalyzer _instance;
+        private static SmsAnalyzer _instance;
         public IOrderedEnumerable<KeyValuePair<string, SMS>> SmsCache { get; set; } 
         public List<string> ProcessedSmsHashes { get; set; }
         public List<SmsRenderModel> SmsRenderModelsCache { get; set; } 
 
         private ExternalApiSmsService ExternalApiSmsService { get; set; }
 
-        public SmsAnalyzer Instance
+        public static SmsAnalyzer Instance
         {
             get { return _instance ?? (_instance = new SmsAnalyzer()); }
         }
@@ -31,9 +31,11 @@ namespace TextAnalysis
                 var unprocessedSms = SmsCache.Except(SmsCache.Where(s => ProcessedSmsHashes.Contains(s.Key)));
 
                 var smsRenderModels = ProcessSms(unprocessedSms);
-                ProcessedSmsHashes.AddRange(smsRenderModels.Select(s => s.Sms.Hash));
-                SmsRenderModelsCache.AddRange(smsRenderModels);
-
+                if (smsRenderModels.Any())
+                {
+                    ProcessedSmsHashes.AddRange(smsRenderModels.Select(s => s.Sms.Hash));
+                    SmsRenderModelsCache.AddRange(smsRenderModels);
+                }
             };
         }
 
