@@ -88,10 +88,6 @@ namespace ClockworkSMS.Service
 
         public event Action Publish;
 
-        protected virtual void OnPublish()
-        {
-            Publish?.Invoke();
-        }
     }
 
     public interface IExternalApiSmsService : IService
