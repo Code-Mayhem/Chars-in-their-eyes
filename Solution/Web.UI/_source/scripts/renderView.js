@@ -7,6 +7,8 @@
 		var temp = '[data-handlebars]';
 		var render = '[data-render]';
 
+		var strip = '[data-strip]';
+
 		function init() {
 			handleEvent();
 
@@ -46,12 +48,13 @@
 			};
 
 			$.connection.hub.start().done(function () {
-			
-				setTimeout(function () {
+				//smsRenderHub.server.sendNewSmsRenders();
+
+				setInterval(function () {
+					$(render).empty();
 					smsRenderHub.server.sendNewSmsRenders();
-				}, 1000);
-
-
+					
+				}, 300000);
 			});
 		}
 
