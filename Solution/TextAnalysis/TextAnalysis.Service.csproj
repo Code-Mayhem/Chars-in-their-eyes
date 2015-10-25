@@ -62,10 +62,6 @@
       <Project>{B2B57D7B-AD98-4B40-B7EB-DC4EAA2CCD1B}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ViewerHelperApp\ViewerHelperApp.csproj">
-      <Project>{DAE5D2DE-FE3D-4E54-9F1D-0B4B8AFC5EE8}</Project>
-      <Name>ViewerHelperApp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

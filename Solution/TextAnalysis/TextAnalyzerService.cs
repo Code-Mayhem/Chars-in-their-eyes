@@ -8,8 +8,6 @@ namespace TextAnalysis
 
 	using Newtonsoft.Json;
 
-	using ViewerHelperApp;
-
 	public class TextAnalyzerService : ITextAnalyzerService
     {
 	    public string AnalyzeText(string text)
