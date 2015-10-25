@@ -47,8 +47,6 @@
 
 			$.connection.hub.start().done(function () {
 			
-				smsRenderHub.server.sendNewSmsRenders();
-
 				setTimeout(function () {
 					smsRenderHub.server.sendNewSmsRenders();
 				}, 1000);
