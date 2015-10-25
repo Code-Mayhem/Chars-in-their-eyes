@@ -1,0 +1,7 @@
+﻿//tools - mixins
+
+@mixin respond-max($width) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}

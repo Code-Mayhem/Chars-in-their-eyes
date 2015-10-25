@@ -10,24 +10,26 @@
 		display: inline-block;
 		width: 33.3%;
 		margin-right: -4px;
+
+		@include respond-max($width-medium) {
+			width: 100%;
+		}
 	}
 
 	&__item {
 		background-color: $c-green;
 		width: 92%;
 		height: 120px;
-		margin: 4%;
+		margin: 5px 4%;
 		padding: 0;
+		position: relative;
 		float: left;
-		//position: relative;
 		overflow: hidden;
 		box-shadow: 1px 1px 2px $c-background-black;
 		animation: loadGrid 2s linear;
 
 		&-image {
 			position: absolute;
-			width: 100%;
-			height: 100%;
 		}
 
 		&--large {

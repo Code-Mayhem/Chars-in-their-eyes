@@ -10,10 +10,11 @@
 * CONTENTS
 * 
 * _SETTINGS
-* settings - colours
+* settings - vars
 * 
 * _TOOLS
-* settings - utils
+* tools - mixins
+* tools - utils
 * 
 * _GENERIC
 * generic - default
@@ -31,8 +32,9 @@
 
 
 
-@import "_settings\_settings.colors.scss";
-@import "_tools\_setting-utils.scss";
+@import "_settings\_settings-vars.scss";
+@import "_tools\_tools-mixins.scss";
+@import "_tools\_tools-utils.scss";
 @import "_generic\_generic-default.scss";
 @import "_elements\_elements-forms.scss";
 @import "_components\_components-autodesk.scss";
