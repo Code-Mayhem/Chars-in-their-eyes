@@ -21,23 +21,21 @@
 			var smsRenderHub = $.connection.smsRenderHub;
 
 			smsRenderHub.client.addNewSmsRenders = function (renderModel) {
-				//console.log(renderModel);
 
 				var dec = decodeURI(renderModel);
-
 				var test = JSON.parse(dec);
 
-				/*
+				
 				for (var i = 0; i < test.length; i++) {
 
-					var url = '/viewingservice/v1/thumbnails/' + test[i].Urn;
+					var url = 'https://developer.api.autodesk.com/viewingservice/v1/thumbnails/' + test[i].Urn;
 
 					var req = new XMLHttpRequest();
 					req.open("GET", url, false);
 					req.send(null);
 					console.log(req.responseText);
-				}*/
-
+				}
+				
 				handlebarsObject(test);
 			};
 
