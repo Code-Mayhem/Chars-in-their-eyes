@@ -78,7 +78,7 @@ namespace ClockworkSMS.Service
                 }
             }
 
-            Publish?.Invoke();
+            Publish.Invoke();
         }
 
         public Dictionary<string, SMS> GetAllSms()
