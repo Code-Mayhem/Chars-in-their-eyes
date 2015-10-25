@@ -27,6 +27,7 @@ namespace Web.UI
             Credentials.Init(LocalConfigs.ConsumerKey, LocalConfigs.SecretKey, LocalConfigs.AutodeskBaseUrl);
             var smsService = ExternalApiSmsService.Instance;
             smsService.Start();
+            var smsAnalyzer = SmsAnalyzer.Instance;
         }
     }
 }

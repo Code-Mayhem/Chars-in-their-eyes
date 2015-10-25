@@ -66,30 +66,32 @@ namespace ClockworkSMS.Service
 
             var smsListJsonTokens = JArray.Parse(content);
 
+            if (!smsListJsonTokens.Any()) return;
+
             foreach (var smsJsonToken in smsListJsonTokens)
             {
-                var sms = new SMS() {FromNumber = (string) smsJsonToken.SelectToken("from"), ID = (string) smsJsonToken.SelectToken("id"), Text = (string) smsJsonToken.SelectToken("content"), Timestamp = (string) smsJsonToken.SelectToken("timestamp")};
+                var sms = new SMS() { FromNumber = (string)smsJsonToken.SelectToken("from"), ID = (string)smsJsonToken.SelectToken("id"), Text = (string)smsJsonToken.SelectToken("content"), Timestamp = (string)smsJsonToken.SelectToken("timestamp") };
                 sms.Hash = ("" + sms.Timestamp + sms.Text + sms.FromNumber).ComputeHash(Hasher.eHashType.SHA1);
                 if (!SmsCache.ContainsKey(sms.Hash))
                 {
                     SmsCache.Add(sms.Hash, sms);
                 }
             }
+
+            Publish.Invoke();
         }
 
-        public IEnumerable<SMS> GetAllSms()
+        public Dictionary<string, SMS> GetAllSms()
         {
-            return SmsCache.Select(s => s.Value);
+            return SmsCache;
         }
 
-        public IEnumerable<SMS> GetLastSms(int numberOfSms)
-        {
-            return SmsCache.Reverse().Take(numberOfSms).Select(s => s.Value);
-        }
+        public event Action Publish;
+
     }
 
     public interface IExternalApiSmsService : IService
     {
-        IEnumerable<SMS> GetAllSms();
+        Dictionary<string, SMS> GetAllSms();
     }
 }
