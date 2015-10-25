@@ -1,106 +1,93 @@
-﻿//(function () {  //comment out this closure so that you can type variables in 
-                  //console of browser to do debugging
- 
-    var viewer;
+﻿(function ($, window, undefined) {
 
-    function initialize() {
+	"use strict";
+	window.code = window.code || {};
+	var viewer = window.code.viewer = function (options) {
 
-        var urn = $('#urn').val();
-        console.log(urn);
-        console.log(urn);
-        //default model urn, you need to change is to your own
-        if (urn == null || urn === "") {
-            console.log("x");
-            urn = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZGV2YnVja2V0L0RyaWxsLmR3Zng=';
-        }
-        if (urn.substr(0,4) !=='urn:') {
-            urn = 'urn:' + urn;
-        }
+		var loadModel = '[data-load-model]';
 
-        var options = {
-            'document': urn,
-            'getAccessToken': getToken, //a function callback which returns access token
-            'refreshToken': getToken, //a function callback which returns access token
-        };
+		function init() {
+			//initialize();
+			handleEvent();
+		}
 
-        var viewerElement = document.getElementById('viewer');
+		function handleEvent() {
+			$(loadModel).on('click', initialize);
+		}
 
-        //Create the viewer object, with some extensions in array
-        //If you do not load any extensions, the second parameter can be 
-        //an empty object {}
+		function initialize() {
 
-        viewer = new Autodesk.Viewing.Private.GuiViewer3D(viewerElement, {
-            extensions: ['BasicExtension']
-        });
-        
+			var urn = $('#urn').val();
 
-        //initializer the viewer 
+			if (urn == null || urn === "") {
+				console.log("x");
+				urn = 'urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6ZGV2YnVja2V0L0RyaWxsLmR3Zng=';
+			}
+			if (urn.substr(0, 4) !== 'urn:') {
+				urn = 'urn:' + urn;
+			}
 
-        Autodesk.Viewing.Initializer(options, function () {
+			var options = {
+				'document': urn,
+				'getAccessToken': getToken,
+				'refreshToken': getToken,
+			};
 
-            viewer.start();
+			var viewerElement = document.getElementById('viewer');
 
-            //load the model document into the viewer
-
-            loadDocument(viewer, options.document);
-        });
+			viewer = new Autodesk.Viewing.Private.GuiViewer3D(viewerElement, {
+				extensions: ['BasicExtension']
+			});
 
 
-       
-    }
+			//initializer the viewer 
 
-  
+			Autodesk.Viewing.Initializer(options, function () {
+				viewer.start();
+				loadDocument(viewer, options.document);
+			});
+		}
 
-    function loadDocument(viewer, documentId) {
-        // Find the first 3d geometry and load that.
-        Autodesk.Viewing.Document.load(documentId, function (doc) {// onLoadCallback
-            var geometryItems = [];
-            geometryItems = Autodesk.Viewing.Document.getSubItemsWithProperties(doc.getRootItem(), {
-                'type': 'geometry',
-                'role': '3d'
-            }, true);
+		function loadDocument(viewer, documentId) {
 
-            if (geometryItems.length > 0) {
-                viewer.load(doc.getViewablePath(geometryItems[0]));
-            }
-        }, function (errorMsg) {// onErrorCallback
-            alert("Load Error: " + errorMsg);
-        });
-    }
+			Autodesk.Viewing.Document.load(documentId, function (doc) {
+				var geometryItems = [];
+				geometryItems = Autodesk.Viewing.Document.getSubItemsWithProperties(doc.getRootItem(), {
+					'type': 'geometry',
+					'role': '3d'
+				}, true);
 
-  
-    // This method should fetch a token from a service you created to provide authentication.
-    function getToken() {
-        console.log("hello");
+				if (geometryItems.length < 0) return;
 
-        var xmlHttp = null;
-        xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", "GetAccessToken.aspx", false);
-        xmlHttp.send(null);
-        var res = xmlHttp.responseText;
-        var newToken = JSON.parse(res);
+				viewer.load(doc.getViewablePath(geometryItems[0]));
 
-        if (newToken.error) {
-            console.log(newToken.error);
-            return '';
-           
-        }
-        else {
-            return newToken.access_token;
-        }
-        
-    }
+			}, function (errorMsg) {
+				alert("Load Error: " + errorMsg);
+			});
+		}
 
+		function getToken() {
+		
+			var xmlHttp = null;
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("GET", "GetAccessToken.aspx", false);
+			xmlHttp.send(null);
+			var res = xmlHttp.responseText;
+			var newToken = JSON.parse(res);
 
-    $('#btnLoadModel').click(function () {
-        //call initialize method to start
-        initialize();
-    });
+			if (newToken.error) {
+				console.log(newToken.error);
+				return;
+			}
 
-    initialize();
+			return newToken.access_token;
+		}
 
-  
+		init();
+	};
 
+}(jQuery, window));
 
-
-//}).call(this);
+$(function () {
+	var viewer = new code.viewer();
+});

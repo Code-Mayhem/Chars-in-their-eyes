@@ -1,0 +1,12 @@
+﻿//elements - forms
+
+.button {
+	background-color: $c-background-black;
+	padding: 5px;
+	display: inline-block;
+	color: $c-green;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
