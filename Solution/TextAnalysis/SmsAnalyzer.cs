@@ -22,7 +22,6 @@ namespace TextAnalysis
             get
             {
                 return JsonConvert.SerializeObject(SmsRenderModelsCache);
-                
             }
         }
 
