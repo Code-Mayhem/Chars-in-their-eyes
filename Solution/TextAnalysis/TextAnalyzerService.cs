@@ -18,17 +18,21 @@ namespace TextAnalysis
 	            text = "empty";
 	        }
 
+	        text = text.Replace("%20", " ");
+
 			var response = CallAlchemyApiAnalysisOnText(text);
 
-            if (response == null || !response.Keywords.Any())
+            if (response == null || response.Keywords == null || !response.Keywords.Any())
 	        {
 	            return "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Y2hhcnNpbnRoZWlyZXllcy9haXJwbGFuZS5kd2c="; // blank model
 	        }
 
 	        foreach (var model in RenderedModelsRepository.ModelList.Models)
 	        {
-	            var tags = model.Tags.Split(',');
-	            var intersectTagsWithKeywords = response.Keywords.Select(k => k.Text).Intersect(tags);
+	            var tags = model.Tags.Replace(" ", "").Split(',');
+	            var keywordsStrings = response.Keywords.Select(k => k.Text);
+
+	            var intersectTagsWithKeywords = tags.Intersect(keywordsStrings);
 	            if (intersectTagsWithKeywords.Any())
 	            {
 	                return model.FileUrn;
