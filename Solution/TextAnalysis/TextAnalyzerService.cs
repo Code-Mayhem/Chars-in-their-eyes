@@ -2,15 +2,13 @@
 
 namespace TextAnalysis
 {
-	using System.IO;
-	using System.Linq;
-
-	using Common;
-
-	using Newtonsoft.Json;
+    using System.Linq;
+    using Newtonsoft.Json;
 
 	public class TextAnalyzerService : ITextAnalyzerService
     {
+	    private string _blankModelUrn = "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Y2hhcnNpbnRoZWlyZXllcy9haXJwbGFuZS5kd2c=";
+
 	    public string AnalyzeText(string text)
 	    {
 	        if (text == null || text.Length < 5)
@@ -22,9 +20,9 @@ namespace TextAnalysis
 
 			var response = CallAlchemyApiAnalysisOnText(text);
 
-            if (response == null || response.Keywords == null || !response.Keywords.Any())
+	        if (response == null || response.Keywords == null || !response.Keywords.Any())
 	        {
-	            return "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Y2hhcnNpbnRoZWlyZXllcy9haXJwbGFuZS5kd2c="; // blank model
+	            return _blankModelUrn; // blank model
 	        }
 
 	        foreach (var model in RenderedModelsRepository.ModelList.Models)
@@ -39,19 +37,20 @@ namespace TextAnalysis
 	            }
 	        }
 
-	        return "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6Y2hhcnNpbnRoZWlyZXllcy9haXJwbGFuZS5kd2c="; // blank model
-
+	        return _blankModelUrn; // blank model
         }
 
 	    private static AlchemyRs CallAlchemyApiAnalysisOnText(string text)
 	    {
-	        var alchemyObj = new AlchemyAPI();
-	        alchemyObj.LoadAPIKey("90f8dd08773b83ad901735d47e25b1d2b04228d3");
+	        var alchemyApi = new AlchemyAPI();
+	        var alchemyKey = "90f8dd08773b83ad901735d47e25b1d2b04228d3";
 
-	        var json = alchemyObj.TextGetRankedKeywords(text);
+	        alchemyApi.LoadAPIKey(alchemyKey);
+
+	        var jsonResponse = alchemyApi.TextGetRankedKeywords(text);
 
 	        // Get keywords from json
-	        var response = JsonConvert.DeserializeObject<AlchemyRs>(json);
+	        var response = JsonConvert.DeserializeObject<AlchemyRs>(jsonResponse);
 
 	        if (response.Status == "ERROR")
 	        {
@@ -59,41 +58,5 @@ namespace TextAnalysis
 	        }
 	        return response;
 	    }
-    }
-
-    public interface ITextAnalyzerService
-    {
-        string AnalyzeText(string text);
-    }
-
-    public static class RenderedModelsRepository
-    {
-        private static ModelList _modelList;
-
-        public static ModelList ModelList
-        {
-            get
-            {
-                if (_modelList == null)
-                {
-                    _modelList = ReadFile();
-                }
-
-                return _modelList;
-            }
-        }
-
-        private static ModelList ReadFile()
-        {
-            var filePath = string.Format("c:\\models.json");
-
-            var reader = new StreamReader(filePath);
-            var jsonReader = new JsonTextReader(reader);
-            var serializer = new JsonSerializer();
-            var modelList = serializer.Deserialize<ModelList>(jsonReader);
-            jsonReader.Close();
-
-            return modelList;
-        }
     }
 }

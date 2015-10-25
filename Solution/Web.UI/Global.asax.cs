@@ -28,6 +28,8 @@ namespace Web.UI
             var smsService = ExternalApiSmsService.Instance;
             smsService.Start();
             var smsAnalyzer = SmsAnalyzer.Instance;
+
+
         }
     }
 }

@@ -22,7 +22,6 @@ namespace Web.UI.Controllers
 	        SmsAnalyzer.Publish += () =>
 	        {
 	            RenderModels = SmsAnalyzer.SmsRenderModelsCache;
-	            UpdateModel(RenderModels, "RenderModels");
 	        };
 	    }
 
@@ -30,16 +29,7 @@ namespace Web.UI.Controllers
         // GET: /Home/
 	    public ActionResult Index(IEnumerable<SmsRenderModel> renderModel)
 	    {
-            //return View(new ModelList(){Models = new List<Model>(){new Model(){ FileName = "abc"}}});
             return View(RenderModels);
         }
-
-			public ActionResult Analyse()
-			{
-				var analyserService = new TextAnalyzerService();
-				var xml = analyserService.AnalyzeText("what time will you be home for tea?");
-				var analyseViewModel = new AnalyseViewModel { xml = xml };
-				return View("Analyse", analyseViewModel);
-			}
     }
 }
