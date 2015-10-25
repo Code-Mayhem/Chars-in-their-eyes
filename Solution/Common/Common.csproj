@@ -45,6 +45,7 @@
     <Compile Include="Credentials.cs" />
     <Compile Include="Hasher.cs" />
     <Compile Include="IService.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="ModelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

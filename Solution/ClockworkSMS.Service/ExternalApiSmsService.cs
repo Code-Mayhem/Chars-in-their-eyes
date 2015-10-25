@@ -41,7 +41,15 @@ namespace ClockworkSMS.Service
             {
                 while (true)
                 {
-                    QueryExternalApi();
+                    try
+                    {
+                        QueryExternalApi();
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Log(e);
+                    }
+                    
 
                     _millisecondsTimeout = 1000;
                     Thread.Sleep(_millisecondsTimeout);
