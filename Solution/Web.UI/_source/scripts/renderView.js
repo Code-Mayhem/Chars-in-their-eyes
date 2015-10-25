@@ -27,8 +27,16 @@
 
 				var test = JSON.parse(dec);
 
+				/*
+				for (var i = 0; i < test.length; i++) {
 
-				console.log(test);
+					var url = '/viewingservice/v1/thumbnails/' + test[i].Urn;
+
+					var req = new XMLHttpRequest();
+					req.open("GET", url, false);
+					req.send(null);
+					console.log(req.responseText);
+				}*/
 
 				handlebarsObject(test);
 			};
