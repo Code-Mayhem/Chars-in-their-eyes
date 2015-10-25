@@ -59,4 +59,9 @@ namespace TextAnalysis
 	        return response;
 	    }
     }
+
+    public interface ITextAnalyzerService
+    {
+        string AnalyzeText(string text);
+    }
 }
