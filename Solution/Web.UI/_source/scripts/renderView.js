@@ -22,6 +22,8 @@
 
 			smsRenderHub.client.addNewSmsRenders = function (renderModel) {
 
+				console.log(renderModel);
+
 				var dec = decodeURI(renderModel);
 				var parse= JSON.parse(dec);
 				
@@ -44,7 +46,14 @@
 			};
 
 			$.connection.hub.start().done(function () {
+			
 				smsRenderHub.server.sendNewSmsRenders();
+
+				setTimeout(function () {
+					smsRenderHub.server.sendNewSmsRenders();
+				}, 1000);
+
+
 			});
 		}
 
