@@ -12,20 +12,26 @@
 		function init() {
 			handleEvent();
 
-			getData();
+			runHub();
+		  
+			setInterval(function () {
+			  var smsRenderHub = $.connection.smsRenderHub;
+			  timerCounter += 1;
+			  smsRenderHub.server.sendNewSmsRenders();
+			  console.log("timeout: " + timerCounter);
+			}, 15000);
 		}
 
 		function handleEvent() {
 			
 		}
 
-		function getData() {
-			var smsRenderHub = $.connection.smsRenderHub;
+		var dataCount = 0;
+	  var timerCounter = 0;
+		function runHub() {
+		  var smsRenderHub = $.connection.smsRenderHub;
 
 			smsRenderHub.client.addNewSmsRenders = function (renderModel) {
-
-				console.log(renderModel);
-
 				var dec = decodeURI(renderModel);
 				var parse= JSON.parse(dec);
 				
@@ -43,13 +49,14 @@
 					
 					parse[i].thumbNail = url;
 				}
-				
-				handlebarsObject(parse);
+
+				if (parse.length > dataCount) {
+			    dataCount = parse.length;
+			    handlebarsObject(parse);
+			  }
 			};
 
-			$.connection.hub.start().done(function () {
-				smsRenderHub.server.sendNewSmsRenders();
-			});
+		  $.connection.hub.start();
 		}
 
 		function getToken() {
@@ -74,6 +81,7 @@
 			var source = $(temp).html();
 			var template = Handlebars.compile(source);
 
+		  $(render).empty();
 			$(render).append(template(data));
 
 		}
